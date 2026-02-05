@@ -1,0 +1,1266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ashutosh Rai | Apparel Business Development</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* ===== MODERN BASE STYLES ===== */
+        :root {
+            --primary: #0A0F1E;
+            --secondary: #FF3E6C;
+            --accent: #6C63FF;
+            --light: #F8F9FF;
+            --gray: #8A8FA3;
+            --glass: rgba(255, 255, 255, 0.08);
+            --glass-border: rgba(255, 255, 255, 0.12);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--primary);
+            color: var(--light);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(108, 99, 255, 0.05) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(255, 62, 108, 0.05) 0%, transparent 20%);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ===== GLASS MORPHISM EFFECT ===== */
+        .glass {
+            background: var(--glass);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+        }
+
+        /* ===== MODERN HEADER ===== */
+        .modern-header {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            max-width: 1100px;
+            z-index: 1000;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            background: linear-gradient(90deg, var(--secondary), var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+        }
+
+        .nav-links a {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 500;
+            position: relative;
+            padding: 8px 0;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--secondary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 120px 0 80px;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 20px;
+            margin-bottom: 2rem;
+        }
+
+        .hero-badge i {
+            color: var(--secondary);
+        }
+
+        .hero-title {
+            font-size: clamp(3rem, 5vw, 5rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(90deg, var(--light), rgba(255, 255, 255, 0.8));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .hero-subtitle {
+            font-size: 1.4rem;
+            color: var(--gray);
+            max-width: 600px;
+            margin-bottom: 3rem;
+        }
+
+        .hero-highlight {
+            color: var(--secondary);
+            font-weight: 600;
+        }
+
+        .cta-group {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 16px 32px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(90deg, var(--secondary), var(--accent));
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(255, 62, 108, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--light);
+            border: 1px solid var(--glass-border);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--secondary);
+            transform: translateY(-5px);
+        }
+
+        /* ===== NEW: TESTIMONIAL SLIDER ===== */
+        .testimonial-section {
+            padding: 100px 0;
+        }
+
+        .testimonial-slider {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .testimonial-track {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .testimonial-slide {
+            min-width: 100%;
+            padding: 3rem;
+            text-align: center;
+        }
+
+        .testimonial-content {
+            font-size: 1.3rem;
+            font-style: italic;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .author-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, var(--secondary), var(--accent));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+        }
+
+        .author-info h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .author-info p {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        .slider-controls {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .slider-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            color: var(--light);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .slider-btn:hover {
+            background: var(--secondary);
+            transform: scale(1.1);
+        }
+
+        /* ===== NEW: BUSINESS GROWTH CALCULATOR ===== */
+        .calculator-section {
+            padding: 100px 0;
+        }
+
+        .calculator-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 3rem;
+        }
+
+        .calculator-form {
+            display: grid;
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .form-label {
+            font-weight: 600;
+            color: var(--light);
+        }
+
+        .range-input {
+            width: 100%;
+            height: 8px;
+            -webkit-appearance: none;
+            background: var(--glass);
+            border-radius: 4px;
+            outline: none;
+        }
+
+        .range-input::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--secondary);
+            cursor: pointer;
+            border: 3px solid var(--light);
+        }
+
+        .input-value {
+            text-align: right;
+            color: var(--secondary);
+            font-weight: 600;
+        }
+
+        .calculator-results {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .result-card {
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .result-value {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        .result-label {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        /* ===== NEW: ANIMATED CAREER TIMELINE ===== */
+        .timeline-section {
+            padding: 100px 0;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent, var(--accent), transparent);
+        }
+
+        .timeline-item {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 4rem;
+            position: relative;
+        }
+
+        .timeline-content {
+            width: 45%;
+            padding: 2rem;
+            position: relative;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content {
+            margin-right: auto;
+            text-align: right;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content {
+            margin-left: auto;
+        }
+
+        .timeline-date {
+            color: var(--secondary);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-desc {
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+
+        .timeline-marker {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--secondary);
+            border: 4px solid var(--primary);
+            z-index: 2;
+        }
+
+        /* ===== PORTFOLIO SECTION ===== */
+        .portfolio-section {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--gray);
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 4rem;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .portfolio-card {
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+            height: 400px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .portfolio-card:hover {
+            transform: translateY(-20px);
+        }
+
+        .portfolio-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.7s ease;
+        }
+
+        .portfolio-card:hover .portfolio-image {
+            transform: scale(1.1);
+        }
+
+        .portfolio-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 2rem;
+            background: linear-gradient(to top, rgba(10, 15, 30, 0.95), transparent);
+        }
+
+        .portfolio-category {
+            display: inline-block;
+            padding: 6px 15px;
+            background: var(--secondary);
+            color: white;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .portfolio-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .portfolio-stats {
+            display: flex;
+            gap: 20px;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .stat-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--gray);
+        }
+
+        /* ===== STATS SECTION ===== */
+        .stats-section {
+            padding: 80px 0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            padding: 3rem;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 2.5rem 1.5rem;
+        }
+
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: 800;
+            background: linear-gradient(90deg, var(--secondary), var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            line-height: 1;
+        }
+
+        .stat-label {
+            color: var(--gray);
+            margin-top: 1rem;
+            font-size: 1.1rem;
+        }
+
+        /* ===== CONTACT SECTION ===== */
+        .contact-section {
+            padding: 100px 0;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .form-input-group {
+            position: relative;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 18px 20px;
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            color: var(--light);
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--secondary);
+            box-shadow: 0 0 0 3px rgba(255, 62, 108, 0.1);
+        }
+
+        .contact-info {
+            padding-left: 3rem;
+        }
+
+        .contact-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 1.1rem;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--glass);
+            border-radius: 12px;
+            color: var(--secondary);
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            padding: 4rem 0 2rem;
+            border-top: 1px solid var(--glass-border);
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .social-link {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            color: var(--light);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: var(--glass);
+            transform: translateY(-5px);
+            color: var(--secondary);
+        }
+
+        .copyright {
+            color: var(--gray);
+            font-size: 0.9rem;
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        /* ===== RESPONSIVE DESIGN ===== */
+        @media (max-width: 992px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            
+            .contact-info {
+                padding-left: 0;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .timeline::before {
+                left: 30px;
+            }
+            
+            .timeline-content {
+                width: calc(100% - 80px);
+                margin-left: 80px !important;
+                text-align: left !important;
+            }
+            
+            .timeline-marker {
+                left: 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.8rem;
+            }
+            
+            .section-title {
+                font-size: 2.5rem;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                padding: 2rem;
+            }
+            
+            .cta-group {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .calculator-results {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 2.2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .modern-header {
+                padding: 15px;
+            }
+        }
+
+        /* ===== ANIMATIONS ===== */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Modern Header -->
+    <header class="modern-header glass">
+        <div class="logo">Ashutosh Rai</div>
+        <nav class="nav-links">
+            <a href="#portfolio">Portfolio</a>
+            <a href="#testimonials">Testimonials</a>
+            <a href="#calculator">ROI Calculator</a>
+            <a href="#timeline">Journey</a>
+            <a href="#contact">Connect</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section container">
+        <div class="hero-content">
+            <div class="hero-badge glass">
+                <i class="fas fa-bolt"></i>
+                <span>Business Development Executive</span>
+            </div>
+            
+            <h1 class="hero-title">
+                Driving Growth in<br>
+                <span class="hero-highlight">Apparel & Fashion</span>
+            </h1>
+            
+            <p class="hero-subtitle">
+                Specializing in strategic partnerships, market expansion, and revenue growth for ladies' and men's garment businesses in Rajasthan's thriving textile hub.
+            </p>
+            
+            <div class="cta-group">
+                <a href="#contact" class="btn btn-primary">
+                    <i class="fas fa-handshake"></i>
+                    Start Partnership
+                </a>
+                <a href="#calculator" class="btn btn-secondary">
+                    <i class="fas fa-calculator"></i>
+                    Calculate Your Growth
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio-section container">
+        <h2 class="section-title">Strategic Initiatives</h2>
+        <p class="section-subtitle">A showcase of market expansions and collection launches that delivered measurable growth.</p>
+        
+        <div class="portfolio-grid">
+            <!-- Project 1 -->
+            <div class="portfolio-card glass fade-in">
+                <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=800" 
+                     alt="Eco Collection Launch" class="portfolio-image">
+                <div class="portfolio-overlay">
+                    <span class="portfolio-category">Sustainable Fashion</span>
+                    <h3 class="portfolio-title">Eco-Capsule 2025 Launch</h3>
+                    <p>Partnership with 12 eco-certified suppliers across Rajasthan</p>
+                    <div class="portfolio-stats">
+                        <div class="stat-item">
+                            <i class="fas fa-arrow-up"></i>
+                            <span>45% Growth</span>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fas fa-calendar"></i>
+                            <span>6 Months</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Project 2 -->
+            <div class="portfolio-card glass fade-in">
+                <img src="https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?auto=format&fit=crop&w=800" 
+                     alt="Retail Expansion" class="portfolio-image">
+                <div class="portfolio-overlay">
+                    <span class="portfolio-category">Market Expansion</span>
+                    <h3 class="portfolio-title">Regional Retail Network</h3>
+                    <p>Secured 50+ premium retail doors across North India</p>
+                    <div class="portfolio-stats">
+                        <div class="stat-item">
+                            <i class="fas fa-store"></i>
+                            <span>50+ Stores</span>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fas fa-rupee-sign"></i>
+                            <span>₹2.4Cr Revenue</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Project 3 -->
+            <div class="portfolio-card glass fade-in">
+                <img src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=800" 
+                     alt="Digital Strategy" class="portfolio-image">
+                <div class="portfolio-overlay">
+                    <span class="portfolio-category">Digital Transformation</span>
+                    <h3 class="portfolio-title">DTC Platform Strategy</h3>
+                    <p>30% increase in online conversion for partner brands</p>
+                    <div class="portfolio-stats">
+                        <div class="stat-item">
+                            <i class="fas fa-percentage"></i>
+                            <span>30% Uplift</span>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fas fa-users"></i>
+                            <span>15K+ Users</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW: Testimonial Slider -->
+    <section id="testimonials" class="testimonial-section container">
+        <h2 class="section-title">Client Testimonials</h2>
+        <p class="section-subtitle">What industry leaders say about working with me.</p>
+        
+        <div class="testimonial-slider glass">
+            <div class="testimonial-track">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-slide">
+                    <div class="testimonial-content">
+                        "Ashutosh transformed our regional presence. His strategic partnerships opened 30+ new retail doors in just 6 months, increasing our revenue by 45%."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">RK</div>
+                        <div class="author-info">
+                            <h4>Rajesh Kumar</h4>
+                            <p>CEO, Textile Traders Association</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="testimonial-slide">
+                    <div class="testimonial-content">
+                        "The digital strategy Ashutosh implemented increased our online sales by 30%. His understanding of both fashion and business is exceptional."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">PM</div>
+                        <div class="author-info">
+                            <h4>Priya Mehta</h4>
+                            <p>Director, Urban Fashion House</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="testimonial-slide">
+                    <div class="testimonial-content">
+                        "Working with Ashutosh on our sustainable collection launch was game-changing. He connected us with 12 eco-certified suppliers we couldn't find ourselves."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">AS</div>
+                        <div class="author-info">
+                            <h4>Anil Sharma</h4>
+                            <p>Founder, EcoStyle Apparels</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="slider-controls">
+                <button class="slider-btn prev-btn">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="slider-btn next-btn">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW: Business Growth Calculator -->
+    <section id="calculator" class="calculator-section container">
+        <h2 class="section-title">Growth Potential Calculator</h2>
+        <p class="section-subtitle">Estimate how much your apparel business could grow with strategic partnerships.</p>
+        
+        <div class="calculator-container glass fade-in">
+            <div class="calculator-form">
+                <div class="form-group">
+                    <label class="form-label">Current Monthly Revenue (₹)</label>
+                    <input type="range" class="range-input" id="revenue" min="500000" max="5000000" step="100000" value="1500000">
+                    <div class="input-value" id="revenueValue">₹15,00,000</div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Growth Target (%)</label>
+                    <input type="range" class="range-input" id="growth" min="10" max="100" step="5" value="30">
+                    <div class="input-value" id="growthValue">30%</div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Timeline (Months)</label>
+                    <input type="range" class="range-input" id="timeline" min="3" max="24" step="1" value="12">
+                    <div class="input-value" id="timelineValue">12 Months</div>
+                </div>
+            </div>
+            
+            <div class="calculator-results">
+                <div class="result-card glass">
+                    <div class="result-value" id="projectedRevenue">₹19,50,000</div>
+                    <div class="result-label">Projected Monthly Revenue</div>
+                </div>
+                
+                <div class="result-card glass">
+                    <div class="result-value" id="totalGrowth">₹54,00,000</div>
+                    <div class="result-label">Additional Revenue (Annual)</div>
+                </div>
+                
+                <div class="result-card glass">
+                    <div class="result-value" id="roi">215%</div>
+                    <div class="result-label">Estimated ROI</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW: Animated Career Timeline -->
+    <section id="timeline" class="timeline-section container">
+        <h2 class="section-title">Professional Journey</h2>
+        <p class="section-subtitle">My path to becoming a specialist in apparel business development.</p>
+        
+        <div class="timeline glass fade-in">
+            <!-- Timeline Item 1 -->
+            <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content glass">
+                    <div class="timeline-date">2021 - 2022</div>
+                    <h3 class="timeline-title">Store Executive - Swiggy Instamart</h3>
+                    <p class="timeline-desc">Mastered retail operations, inventory management, and customer service in fast-paced environment.</p>
+                </div>
+            </div>
+            
+            <!-- Timeline Item 2 -->
+            <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content glass">
+                    <div class="timeline-date">2022 - 2024</div>
+                    <h3 class="timeline-title">Store Executive - Swiggy</h3>
+                    <p class="timeline-desc">Developed expertise in logistics, team management, and operational efficiency.</p>
+                </div>
+            </div>
+            
+            <!-- Timeline Item 3 -->
+            <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content glass">
+                    <div class="timeline-date">2024 - Present</div>
+                    <h3 class="timeline-title">Business Development Executive - Trevia Apparel</h3>
+                    <p class="timeline-desc">Driving growth through strategic partnerships, market expansion, and revenue optimization in Rajasthan's textile hub.</p>
+                </div>
+            </div>
+            
+            <!-- Timeline Item 4 -->
+            <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content glass">
+                    <div class="timeline-date">Future Vision</div>
+                    <h3 class="timeline-title">Expanding Across India</h3>
+                    <p class="timeline-desc">Building a pan-India network of apparel partnerships and driving sustainable fashion initiatives.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section id="stats" class="stats-section container">
+        <div class="stats-grid glass fade-in">
+            <div class="stat-card">
+                <div class="stat-number">50+</div>
+                <div class="stat-label">Retail Partnerships</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">₹5.2Cr</div>
+                <div class="stat-label">Revenue Generated</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">12</div>
+                <div class="stat-label">Supplier Networks</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">45%</div>
+                <div class="stat-label">Avg. Growth Rate</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section container">
+        <div class="contact-grid">
+            <div class="contact-form fade-in">
+                <h3 class="contact-title">Let's Build Something Great</h3>
+                <form id="contactForm">
+                    <div class="form-input-group">
+                        <input type="text" id="name" class="form-input" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-input-group">
+                        <input type="email" id="email" class="form-input" placeholder="Business Email" required>
+                    </div>
+                    <div class="form-input-group">
+                        <input type="text" id="company" class="form-input" placeholder="Company Name">
+                    </div>
+                    <div class="form-input-group">
+                        <textarea id="message" class="form-input" placeholder="Tell me about your growth goals..." rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-paper-plane"></i>
+                        Send Proposal
+                    </button>
+                </form>
+            </div>
+            
+            <div class="contact-info fade-in">
+                <h3 class="contact-title">Connect Directly</h3>
+                <p>Specializing in apparel business growth, strategic partnerships, and market expansion in Rajasthan's textile industry.</p>
+                
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <strong>Email</strong>
+                            <div>ashutosh@treviaapparel.com</div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <strong>Location</strong>
+                            <div>Bhilwara, Rajasthan - Textile Hub</div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <div>
+                            <strong>Specialization</strong>
+                            <div>Ladies' & Men's Garments Business Growth</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer container">
+        <div class="footer-content">
+            <div class="logo">Ashutosh Rai</div>
+            
+            <div class="social-links">
+                <a href="https://linkedin.com" class="social-link glass">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://twitter.com" class="social-link glass">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://instagram.com" class="social-link glass">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="mailto:ashutosh@example.com" class="social-link glass">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            © 2024 Ashutosh Rai. All rights reserved. | Business Development Executive
+        </div>
+    </footer>
+
+    <script>
+        // Scroll animations
+        const fadeElements = document.querySelectorAll('.fade-in');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        fadeElements.forEach(el => observer.observe(el));
+        
+        // NEW: Testimonial Slider
+        const track = document.querySelector('.testimonial-track');
+        const slides = document.querySelectorAll('.testimonial-slide');
+        const prevBtn = document.querySelector('.prev-btn');
+        const nextBtn = document.querySelector('.next-btn');
+        let currentSlide = 0;
+        
+        function updateSlider() {
+            track.style.transform = `translateX(-${currentSlide * 100}%)`;
+        }
+        
+        nextBtn.addEventListener('click', () => {
+            currentSlide = (currentSlide + 1) % slides.length;
+            updateSlider();
+        });
+        
+        prevBtn.addEventListener('click', () => {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            updateSlider();
+        });
+        
+        // Auto-rotate testimonials
+        setInterval(() => {
+            currentSlide = (currentSlide + 1) % slides.length;
+            updateSlider();
+        }, 5000);
+        
+        // NEW: Growth Calculator
+        const revenueSlider = document.getElementById('revenue');
+        const growthSlider = document.getElementById('growth');
+        const timelineSlider = document.getElementById('timeline');
+        const revenueValue = document.getElementById('revenueValue');
+        const growthValue = document.getElementById('growthValue');
+        const timelineValue = document.getElementById('timelineValue');
+        const projectedRevenue = document.getElementById('projectedRevenue');
+        const totalGrowth = document.getElementById('totalGrowth');
+        const roi = document.getElementById('roi');
+        
+        function formatCurrency(amount) {
+            return '₹' + amount.toLocaleString('en-IN');
+        }
+        
+        function calculateGrowth() {
+            const revenue = parseInt(revenueSlider.value);
+            const growth = parseInt(growthSlider.value);
+            const timeline = parseInt(timelineSlider.value);
+            
+            // Update display values
+            revenueValue.textContent = formatCurrency(revenue);
+            growthValue.textContent = growth + '%';
+            timelineValue.textContent = timeline + ' Months';
+            
+            // Calculate projections
+            const monthlyGrowth = revenue * (growth / 100);
+            const projectedMonthly = revenue + monthlyGrowth;
+            const annualGrowth = monthlyGrowth * 12;
+            const roiPercentage = (monthlyGrowth / (revenue * 0.1)) * 100; // Assuming 10% investment
+            
+            // Update result displays
+            projectedRevenue.textContent = formatCurrency(Math.round(projectedMonthly));
+            totalGrowth.textContent = formatCurrency(Math.round(annualGrowth));
+            roi.textContent = Math.round(roiPercentage) + '%';
+        }
+        
+        // Initialize calculator
+        revenueSlider.addEventListener('input', calculateGrowth);
+        growthSlider.addEventListener('input', calculateGrowth);
+        timelineSlider.addEventListener('input', calculateGrowth);
+        calculateGrowth(); // Initial calculation
+        
+        // Form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const btn = this.querySelector('button[type="submit"]');
+            const originalText = btn.innerHTML;
+            
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            btn.disabled = true;
+            
+            // Simulate API call
+            setTimeout(() => {
+                alert('Thank you! Your partnership request has been sent. I\'ll contact you within 24 hours.');
+                this.reset();
+                btn.innerHTML = originalText;
+                btn.disabled = false;
+            }, 1500);
+        });
+        
+        // Update year in footer
+        document.querySelector('.copyright').innerHTML = 
+            `© ${new Date().getFullYear()} Ashutosh Rai. All rights reserved. | Business Development Executive`;
+    </script>
+</body>
+</html>
